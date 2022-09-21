@@ -1,6 +1,8 @@
+package org.personal.practise.leetcode.arrays
+
 import java.util.*
 
-class Practise {
+class Easy {
   fun findOriginalArray(changed: IntArray): IntArray {
     val len = changed.size.div(2)
     val defaultAns: IntArray = intArrayOf(0)
@@ -71,13 +73,23 @@ class Practise {
     }
     return true
   }
-}
 
-fun main() {
-  val practise = Practise()
-  //    val arr: IntArray = intArrayOf(1,3,4,2,6,8)
-  //    println(practise.findOriginalArray(arr).joinToString(","))
+  // Two Sum
+  fun twoSum(nums: IntArray, target: Int): IntArray {
+    val indexMap = hashMapOf<Int, Int>()
 
-  val words: Array<String> = arrayOf("abcd", "dcba", "lls", "s", "sssll")
-  println(practise.palindromePairs(words).joinToString(","))
+    nums.forEachIndexed{ index, num ->
+      indexMap[num] = index
+    }
+    println(indexMap)
+    var find: Int
+    nums.forEachIndexed { index, num ->
+      find = target.minus(num)
+      if (indexMap.containsKey(find) && indexMap[find]!! != index) {
+        return intArrayOf(indexMap[find]!!, index)
+      }
+    }
+
+    return intArrayOf()
+  }
 }
