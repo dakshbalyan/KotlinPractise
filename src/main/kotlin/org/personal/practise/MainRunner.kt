@@ -9,9 +9,21 @@ class MainRunner {
         val target = 6
         println(arraysEasy.twoSum(nums, target).joinToString(","))
     }
+
+    fun romanToInt() {
+        val s = "CM"
+        println(arraysEasy.romanToInt(s))
+    }
+
+    fun longestCommonPrefix() {
+        val strs = arrayOf("flower","flow","flight")
+        println(arraysEasy.longestCommonPrefix(strs))
+    }
 }
 
 fun main() {
     val runner = MainRunner()
-    runner.twoSum()
+//    runner.twoSum()
+//    runner.romanToInt()
+    runner.longestCommonPrefix()
 }
