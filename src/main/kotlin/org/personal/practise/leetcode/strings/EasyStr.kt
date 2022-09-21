@@ -1,8 +1,8 @@
-package org.personal.practise.leetcode.string
+package org.personal.practise.leetcode.strings
 
 import java.util.*
 
-class Easy {
+class EasyStr {
     // 20. Valid Parentheses
     fun isValid(s: String): Boolean {
         val stack = Stack<Char>()

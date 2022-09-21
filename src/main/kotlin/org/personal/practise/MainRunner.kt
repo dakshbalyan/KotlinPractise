@@ -1,10 +1,10 @@
 package org.personal.practise
 
-import org.personal.practise.leetcode.arrays.Easy
+import org.personal.practise.leetcode.arrays.EasyArr
 
 class MainRunner {
-    private val arraysEasy = Easy()
-    private val stringsEasy = org.personal.practise.leetcode.string.Easy()
+    private val arraysEasy = EasyArr()
+    private val stringsEasy = org.personal.practise.leetcode.strings.EasyStr()
     fun twoSum() {
         val nums = intArrayOf(3,2,4)
         val target = 6

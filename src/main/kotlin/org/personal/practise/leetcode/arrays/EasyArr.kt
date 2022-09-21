@@ -2,7 +2,7 @@ package org.personal.practise.leetcode.arrays
 
 import java.util.*
 
-class Easy {
+class EasyArr {
   fun findOriginalArray(changed: IntArray): IntArray {
     val len = changed.size.div(2)
     val defaultAns: IntArray = intArrayOf(0)
