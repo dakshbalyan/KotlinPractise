@@ -3,13 +3,16 @@ package org.personal.practise
 import org.personal.practise.leetcode.arrays.EasyArr
 import org.personal.practise.leetcode.arrays.HardArr
 import org.personal.practise.leetcode.arrays.MediumArr
+import org.personal.practise.leetcode.linkedlists.EasyLL
 import org.personal.practise.leetcode.strings.EasyStr
+import org.personal.practise.leetcode.utils.ListNode
 
 class MainRunner {
     private val arraysEasy = EasyArr()
     private val arraysMedium = MediumArr()
     private val arraysHard = HardArr()
     private val stringsEasy = EasyStr()
+    private val linkedListEasy = EasyLL()
     fun twoSum() {
         val nums = intArrayOf(3,2,4)
         val target = 6
@@ -40,6 +43,21 @@ class MainRunner {
         val duplicates = arrayOf("root/a 1.txt(abcd) 2.txt(efgh)","root/c 3.txt(abcd)","root/c/d 4.txt(efgh)","root 4.txt(efgh)")
         println(arraysMedium.findDuplicate(duplicates).joinToString(","))
     }
+
+    fun mergeTwoLinkedLists() {
+        val firstfirstLL = ListNode(1)
+        val firstsecondLL = ListNode(2)
+        val firstthirdLL = ListNode(4)
+        val secondfirstLL = ListNode(1)
+        val secondsecondLL = ListNode(3)
+        val secondthirdLL = ListNode(4)
+        firstfirstLL.next = firstsecondLL
+        firstsecondLL.next = firstthirdLL
+        secondfirstLL.next = secondsecondLL
+        secondsecondLL.next = secondthirdLL
+
+        println(linkedListEasy.mergeTwoLists(firstfirstLL, secondfirstLL))
+    }
 }
 
 fun main() {
@@ -49,5 +67,6 @@ fun main() {
 //    runner.longestCommonPrefix()
 //    runner.validParentheses()
 //    runner.trapRainWater()
-    runner.findDuplicateDocs()
+//    runner.findDuplicateDocs()
+        runner.mergeTwoLinkedLists()
 }
