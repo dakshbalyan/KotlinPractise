@@ -11,8 +11,8 @@ class Easy {
     Arrays.sort(changed)
     val freqMap = hashMapOf<Int, Int>()
     changed.forEach { elem -> freqMap[elem] = freqMap.getOrDefault(elem, 0) + 1 }
-    val res: IntArray = IntArray(len) { 0 }
-    var itr: Int = 0
+    val res = IntArray(len) { 0 }
+    var itr = 0
     var doubled: Int
     for (elem in changed) {
       doubled = elem * 2
@@ -52,7 +52,7 @@ class Easy {
             visited[i] = 1
             visited[j] = 1
           } else {
-              ans.add(listOf(i,j))
+            ans.add(listOf(i, j))
           }
         }
       }
@@ -78,9 +78,7 @@ class Easy {
   fun twoSum(nums: IntArray, target: Int): IntArray {
     val indexMap = hashMapOf<Int, Int>()
 
-    nums.forEachIndexed{ index, num ->
-      indexMap[num] = index
-    }
+    nums.forEachIndexed { index, num -> indexMap[num] = index }
     println(indexMap)
     var find: Int
     nums.forEachIndexed { index, num ->
@@ -91,49 +89,5 @@ class Easy {
     }
 
     return intArrayOf()
-  }
-
-  // Roman to Integer
-  fun romanToInt(s: String): Int {
-    val romanMap = mapOf<Char, Int>(
-      'I' to 1, 'V' to 5, 'X' to 10, 'L' to 50,
-      'C' to 100, 'D' to 500, 'M' to 1000)
-    var ans = 0
-    var i = 0
-    while (i < s.length) {
-      if (romanCondition(i, s)) {
-        ans = ans.plus(romanMap[s[i+1]]!!).minus(romanMap[s[i]]!!)
-        i+=2
-        continue
-      }
-      ans = ans.plus(romanMap[s[i]]!!)
-      i++
-    }
-    return ans
-  }
-
-  private fun romanCondition(i: Int, s: String): Boolean {
-    if (i < s.length - 1) {
-      return (s[i] == 'I' && (s[i+1] == 'V' || s[i+1] == 'X'))
-              || (s[i] == 'X' && (s[i+1] == 'L' || s[i+1] == 'C'))
-              || (s[i] == 'C' && (s[i+1] == 'D' || s[i+1] == 'M'))
-    }
-
-    return false
-  }
-
-  // Longest Common Prefix
-  fun longestCommonPrefix(strs: Array<String>): String {
-    strs.sort()
-    var ans = strs[0]
-    for (s in strs) {
-      for (i in s.indices) {
-        if (i < ans.length && ans[i] != s[i]) {
-          ans = ans.substring(0,i)
-        }
-      }
-    }
-
-    return ans
   }
 }
