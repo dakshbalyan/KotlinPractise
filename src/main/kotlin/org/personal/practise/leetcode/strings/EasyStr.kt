@@ -62,4 +62,24 @@ class EasyStr {
 
         return false
     }
+
+    // 557. Reverse Words in a String III
+    fun reverseWords(s: String): String {
+        val words = s.split(' ')
+        var reversedWords = String()
+
+        words.forEachIndexed { index, word ->
+            if (index != 0)
+                reversedWords += " "
+            reversedWords += word.reversed()
+        }
+
+        return reversedWords
+    }
+
+    fun optimisedReverseWords(s: String): String {
+        return s.split(" ")
+            .map { word -> word.reversed() }
+            .joinToString(" ")
+    }
 }

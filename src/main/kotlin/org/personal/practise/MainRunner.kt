@@ -64,6 +64,12 @@ class MainRunner {
         val queries = arrayOf(intArrayOf(1,0),intArrayOf(-3,1), intArrayOf(-4,0), intArrayOf(2,3))
         println(arraysMedium.sumEvenAfterQueries(nums, queries).joinToString(","))
     }
+
+    fun reverseWords() {
+        val words = "Let's take LeetCode contest"
+//        println(stringsEasy.reverseWords(words))
+        println(stringsEasy.optimisedReverseWords(words))
+    }
 }
 
 fun main() {
@@ -75,5 +81,6 @@ fun main() {
 //    runner.trapRainWater()
 //    runner.findDuplicateDocs()
 //        runner.mergeTwoLinkedLists()
-    runner.sumEvenAfterQueries()
+//    runner.sumEvenAfterQueries()
+    runner.reverseWords()
 }
