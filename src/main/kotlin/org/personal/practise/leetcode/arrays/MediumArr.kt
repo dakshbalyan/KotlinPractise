@@ -29,4 +29,37 @@ class MediumArr {
 
         return duplicates
     }
+
+    // 985. Sum of Even Numbers After Queries
+    fun sumEvenAfterQueries(nums: IntArray, queries: Array<IntArray>): IntArray {
+        var evenSum = 0
+        val evenSumArr = IntArray(nums.size)
+        nums.forEach { num ->
+            if (num.rem(2) == 0)
+                evenSum = evenSum.plus(num)
+        }
+        var i = 0
+        queries.forEach { query ->
+            require(i < evenSumArr.size)
+            evenSumArr[i] = processQuery(nums, query[1], query[0], evenSum)
+            evenSum = evenSumArr[i++]
+        }
+
+        return evenSumArr
+    }
+
+    private fun processQuery(nums: IntArray, idx: Int, value: Int, initialSum: Int): Int {
+        val prevVal = nums[idx]
+        nums[idx] = nums[idx].plus(value)
+
+        return if (prevVal.rem(2) == 0 && nums[idx].rem(2) == 0) {
+            initialSum.minus(prevVal).plus(nums[idx])
+        } else if (prevVal.rem(2) != 0 && nums[idx].rem(2) == 0) {
+            initialSum.plus(nums[idx])
+        } else if (prevVal.rem(2) == 0 && nums[idx].rem(2) != 0) {
+            initialSum.minus(prevVal)
+        } else {
+            initialSum
+        }
+    }
 }

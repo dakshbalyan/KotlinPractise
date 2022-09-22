@@ -58,6 +58,12 @@ class MainRunner {
 
         println(linkedListEasy.mergeTwoLists(firstfirstLL, secondfirstLL))
     }
+
+    fun sumEvenAfterQueries() {
+        val nums = intArrayOf(1,2,3,4)
+        val queries = arrayOf(intArrayOf(1,0),intArrayOf(-3,1), intArrayOf(-4,0), intArrayOf(2,3))
+        println(arraysMedium.sumEvenAfterQueries(nums, queries).joinToString(","))
+    }
 }
 
 fun main() {
@@ -68,5 +74,6 @@ fun main() {
 //    runner.validParentheses()
 //    runner.trapRainWater()
 //    runner.findDuplicateDocs()
-        runner.mergeTwoLinkedLists()
+//        runner.mergeTwoLinkedLists()
+    runner.sumEvenAfterQueries()
 }
