@@ -3,6 +3,7 @@ package org.personal.practise
 import org.personal.practise.leetcode.arrays.EasyArr
 import org.personal.practise.leetcode.arrays.HardArr
 import org.personal.practise.leetcode.arrays.MediumArr
+import org.personal.practise.leetcode.dp.MediumDP
 import org.personal.practise.leetcode.linkedlists.EasyLL
 import org.personal.practise.leetcode.strings.EasyStr
 import org.personal.practise.leetcode.utils.ListNode
@@ -13,6 +14,7 @@ class MainRunner {
     private val arraysHard = HardArr()
     private val stringsEasy = EasyStr()
     private val linkedListEasy = EasyLL()
+    private val dpMedium = MediumDP()
     fun twoSum() {
         val nums = intArrayOf(3,2,4)
         val target = 6
@@ -70,6 +72,10 @@ class MainRunner {
 //        println(stringsEasy.reverseWords(words))
         println(stringsEasy.optimisedReverseWords(words))
     }
+
+    fun numRollsToTarget() {
+        println(dpMedium.numRollsToTarget(30, 30, 500))
+    }
 }
 
 fun main() {
@@ -82,5 +88,6 @@ fun main() {
 //    runner.findDuplicateDocs()
 //        runner.mergeTwoLinkedLists()
 //    runner.sumEvenAfterQueries()
-    runner.reverseWords()
+//    runner.reverseWords()
+    runner.numRollsToTarget()
 }
