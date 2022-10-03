@@ -3,6 +3,7 @@ package org.personal.practise
 import org.personal.practise.leetcode.arrays.EasyArr
 import org.personal.practise.leetcode.arrays.HardArr
 import org.personal.practise.leetcode.arrays.MediumArr
+import org.personal.practise.leetcode.dp.EasyDP
 import org.personal.practise.leetcode.dp.MediumDP
 import org.personal.practise.leetcode.linkedlists.EasyLL
 import org.personal.practise.leetcode.strings.EasyStr
@@ -15,6 +16,7 @@ class MainRunner {
     private val stringsEasy = EasyStr()
     private val linkedListEasy = EasyLL()
     private val dpMedium = MediumDP()
+    private val dpEasy = EasyDP()
     fun twoSum() {
         val nums = intArrayOf(3,2,4)
         val target = 6
@@ -76,6 +78,12 @@ class MainRunner {
     fun numRollsToTarget() {
         println(dpMedium.numRollsToTarget(30, 30, 500))
     }
+
+    fun minCost() {
+        val colors = "bbbaaa"
+        val neededTime = intArrayOf(4,9,3,8,8,9)
+        println(dpEasy.minCost(colors, neededTime))
+    }
 }
 
 fun main() {
@@ -89,5 +97,6 @@ fun main() {
 //        runner.mergeTwoLinkedLists()
 //    runner.sumEvenAfterQueries()
 //    runner.reverseWords()
-    runner.numRollsToTarget()
+//    runner.numRollsToTarget()
+    runner.minCost()
 }
