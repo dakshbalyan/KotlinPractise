@@ -7,7 +7,9 @@ import org.personal.practise.leetcode.dp.EasyDP
 import org.personal.practise.leetcode.dp.MediumDP
 import org.personal.practise.leetcode.linkedlists.EasyLL
 import org.personal.practise.leetcode.strings.EasyStr
+import org.personal.practise.leetcode.trees.EasyTree
 import org.personal.practise.leetcode.utils.ListNode
+import org.personal.practise.leetcode.utils.TreeNode
 
 class MainRunner {
     private val arraysEasy = EasyArr()
@@ -17,6 +19,7 @@ class MainRunner {
     private val linkedListEasy = EasyLL()
     private val dpMedium = MediumDP()
     private val dpEasy = EasyDP()
+    private val treeEasy = EasyTree()
     fun twoSum() {
         val nums = intArrayOf(3,2,4)
         val target = 6
@@ -84,6 +87,28 @@ class MainRunner {
         val neededTime = intArrayOf(4,9,3,8,8,9)
         println(dpEasy.minCost(colors, neededTime))
     }
+
+    fun hasPathSum() {
+        val rootNode = TreeNode(5)
+        val leftRootNode = TreeNode(4)
+        val rightRootNode = TreeNode(8)
+        val leftleftRootNode = TreeNode(11)
+        val leftleftleftRootNode = TreeNode(7)
+        val rightleftleftRootNode = TreeNode(2)
+        val leftrightRootNode = TreeNode(13)
+        val rightrightRootNode = TreeNode(4)
+        val rightrightrightRootNode = TreeNode(4)
+        rootNode.left = leftRootNode
+        rootNode.right = rightRootNode
+        leftRootNode.left = leftleftRootNode
+        leftleftRootNode.left = leftleftleftRootNode
+        leftleftRootNode.right = rightleftleftRootNode
+        rightRootNode.left = leftrightRootNode
+        rightRootNode.right = rightrightRootNode
+        rightrightRootNode.right = rightrightrightRootNode
+
+        println(treeEasy.hasPathSum(rootNode, 22))
+    }
 }
 
 fun main() {
@@ -98,5 +123,6 @@ fun main() {
 //    runner.sumEvenAfterQueries()
 //    runner.reverseWords()
 //    runner.numRollsToTarget()
-    runner.minCost()
+//    runner.minCost()
+    runner.hasPathSum()
 }
