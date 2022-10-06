@@ -133,6 +133,18 @@ class MainRunner {
 
         println(treeMedium.pathSum(rootNode, 22).joinToString(","))
     }
+
+    fun addRowRecursively() {
+        val rootNode = TreeNode(1)
+        val leftRootNode = TreeNode(2)
+        val rightRootNode = TreeNode(3)
+        val leftleftRootNode = TreeNode(4)
+        rootNode.left = leftRootNode
+        rootNode.right = rightRootNode
+        leftRootNode.left = leftleftRootNode
+
+        println(treeMedium.addOneRow(rootNode, 5, 4)?.`val`)
+    }
 }
 
 fun main() {
@@ -149,5 +161,6 @@ fun main() {
 //    runner.numRollsToTarget()
 //    runner.minCost()
 //    runner.hasPathSum()
-    runner.pathSum()
+//    runner.pathSum()
+    runner.addRowRecursively()
 }
