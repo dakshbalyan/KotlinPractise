@@ -1,5 +1,7 @@
 package org.personal.practise.leetcode.arrays
 
+import kotlin.math.abs
+
 class MediumArr {
     fun findDuplicate(paths: Array<String>): List<List<String>> {
         val contentMap = HashMap<String, MutableList<String>>()
@@ -61,5 +63,38 @@ class MediumArr {
         } else {
             initialSum
         }
+    }
+
+    // 16. 3Sum Closest -> O(n^2) -- 2 pointer
+    fun threeSumClosest(nums: IntArray, target: Int): Int {
+        // O(nlogn)
+        nums.sort()
+        var minDiff = Int.MAX_VALUE
+        var closestSum = 0
+        // O(n)
+        for (i in 0 until nums.size - 2) {
+            val newTarget = target - nums[i]
+            var start = i+1
+            var end = nums.size - 1
+            // O(n)
+            while (start < end) {
+                val newSum = nums[start].plus(nums[end])
+                val currDiff = abs(newTarget - newSum)
+                if (currDiff < minDiff) {
+                    minDiff = currDiff
+                    closestSum = nums[i].plus(newSum)
+                }
+
+                if (newSum < newTarget) {
+                    start++
+                } else if (newSum > newTarget) {
+                    end--
+                } else {
+                    return closestSum
+                }
+            }
+        }
+
+        return closestSum
     }
 }
