@@ -1,5 +1,7 @@
 package org.personal.practise.leetcode.dp
 
+import kotlin.math.min
+
 class EasyDP {
     // 1578. Minimum Time to Make Rope Colorful
     fun minCost(colors: String, neededTime: IntArray): Int {
@@ -15,5 +17,15 @@ class EasyDP {
         }
 
         return cost
+    }
+
+    // 746. Min Cost Climbing Stairs
+    fun minCostClimbingStairs(cost: IntArray): Int {
+        return min( minCostClimbingStairs(cost, 0),
+        minCostClimbingStairs(cost, 1))
+    }
+
+    private fun minCostClimbingStairs(cost: IntArray, index: Int): Int {
+        return 0
     }
 }

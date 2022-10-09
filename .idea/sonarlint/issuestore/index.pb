@@ -3,8 +3,6 @@ p
 @src/main/kotlin/org/personal/practise/leetcode/arrays/EasyArr.kt,2/b/2bee2f824b467e6b44deb91d4d37840ac0545509
 p
 @src/main/kotlin/org/personal/practise/leetcode/arrays/HardArr.kt,7/d/7d3c91ec13dd7ac7694e40be739b785918327300
-k
-;src/main/kotlin/org/personal/practise/leetcode/dp/EasyDP.kt,7/1/715d9102ecb77168adbe4c5860b1e753ac32efc3
 t
 Dsrc/main/kotlin/org/personal/practise/leetcode/linkedlists/EasyLL.kt,9/5/95adb89db5bdf7a1689393be70c2e53b13d8cfba
 p
